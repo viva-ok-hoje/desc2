@@ -321,7 +321,7 @@ setInterval(atualizarContador, 1000);
       </button>
 
       <!-- Cota 120 - 50% OFF -->
-      <button type="button" class="cota" onclick="selecionarValor(120)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
+      <button type="button" class="cota" onclick="selecionarValor(70)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
         <div style="position: absolute; top: 4px; left: 4px; background: red; color: white; font-size: 10px; padding: 2px 4px; border-radius: 4px;">50% OFF</div>
         <div class="cota-qtd" style="font-weight: bold;">+70</div>
         <div style="color: #00ff66; font-size: 12px;">100 grátis</div>
@@ -330,7 +330,7 @@ setInterval(atualizarContador, 1000);
       </button>
 
       <!-- Cota 100 - 50% OFF -->
-      <button type="button" class="cota" onclick="selecionarValor(200)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
+      <button type="button" class="cota" onclick="selecionarValor(100)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
         <div style="position: absolute; top: 4px; left: 4px; background: red; color: white; font-size: 10px; padding: 2px 4px; border-radius: 4px;">50% OFF</div>
         <div class="cota-qtd" style="font-weight: bold;">+100</div>
         <div style="color: #00ff66; font-size: 12px;">100 grátis</div>
@@ -339,7 +339,7 @@ setInterval(atualizarContador, 1000);
       </button>
 
       <!-- Cota 200 - 50% OFF -->
-      <button type="button" class="cota" onclick="selecionarValor(500)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
+      <button type="button" class="cota" onclick="selecionarValor(200)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
         <div style="position: absolute; top: 4px; left: 4px; background: red; color: white; font-size: 10px; padding: 2px 4px; border-radius: 4px;">50% OFF</div>
         <div class="cota-qtd" style="font-weight: bold;">+200</div>
         <div style="color: #00ff66; font-size: 12px;">100 grátis</div>
@@ -530,9 +530,9 @@ setInterval(atualizarContador, 1000);
     if (valor === 15) return 10.40;
     if (valor === 30) return 14.85;
     if (valor === 40) return 19.80;
-    if (valor === 120) return 34.65;
-    if (valor === 200) return 49.50;
-    if (valor === 500) return 99.50;
+    if (valor === 70) return 34.65;
+    if (valor === 100) return 49.50;
+    if (valor === 200) return 99.50;
     return 0;
   }
 
@@ -600,7 +600,7 @@ setInterval(atualizarContador, 1000);
   function incrementar() {
     const input = document.getElementById('numero');
     let valor = parseInt(input.value);
-    const valores = [15, 30, 40, 120, 200, 500];
+    const valores = [15, 30, 40, 70, 100, 200];
     const proximo = valores.find(v => v > valor) || 200;
     input.value = proximo;
     highlightButton();
@@ -609,7 +609,7 @@ setInterval(atualizarContador, 1000);
   function decrementar() {
     const input = document.getElementById('numero');
     let valor = parseInt(input.value);
-    const valores = [15, 30, 40, 120, 200, 500];
+    const valores = [15, 30, 40, 70, 100, 200];
     const anterior = [...valores].reverse().find(v => v < valor) || 15;
     input.value = anterior;
     highlightButton();
